@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script src="./js/bundle.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div id="app">
+<p>{{ratesData.rates}}</p>
+<!-- <h1>{{rates}}</h1> -->
+  <!-- <label for="this.rates">Choose a Currency</label> -->
+
+<h1></h1>
+
+
+<h1>Convert Currency From Euros</h1>
+
+<!-- <label for="rates">Choose a Currency</label>
+<select id="rates" v-model="selectedCurrency">
+  <option v-for"(value, key) in ratesData.rates" :value="value"> {{key}} </option>
+</select> -->
+
+<label for="rate_select">Select a Rate:</label>
+        <select id="rate_select" v-model="selectedCurrency">
+          <option disabled value="">Select a Currency</option>
+          <option v-for="(value, key) in ratesData.rates" :value="value"> {{key}} </option>
+        </select>
+
+
+<p>{{selectedCurrency}}</p>
+
+<!-- <label for="countries">Choose a Country</label>
+
+<select id="countries" v-model="selectedCurrency">
+  <option v-for="(country, index) in countries"  v-bind:value="country" >{{country.name}}</option>
+
+</select> -->
+
+
+
+
+
+
+
+
+
+    <!-- <select id="countries" v-model="selectedCurrency">
+      <option v-for="(country, index) in countries"  v-bind:value="country" >{{country.name}}</option>
+
+    </select> -->
+
+
+
+
+  </div>
+</body>
+</html>
