@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#app',
     data:{
       ratesData: {},
-      selectedCurrency: 0
+      selectedCurrency: 1,
+      amountToExchange: 1,
+      selectedCurrency2: 1,
+      amountToExchange2: 1
 
     },
     mounted(){
@@ -13,8 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     },
     computed:{
+      euroToOther: function() {
+        return (this.amountToExchange * this.selectedCurrency).toFixed(2)},
 
-    },
+        otherToEuro: function () {
+          return (this.amountToExchange2 / this.selectedCurrency2).toFixed(2)}
+
+      },
     methods:{
       fetchExchange: function(){
         const request = fetch("https://api.exchangeratesapi.io/latest")

@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <script src="./js/bundle.js"></script>
 
-  <title></title>
+  <title>Johnny's Cash</title>
 </head>
 <body>
   <div id="app">
-<p>{{ratesData.rates}}</p>
 <!-- <h1>{{rates}}</h1> -->
   <!-- <label for="this.rates">Choose a Currency</label> -->
 
@@ -17,41 +16,38 @@
 
 <h1>Convert Currency From Euros</h1>
 
+<p>Enter amount of Euros then choose another currency</p>
+<label for="base">Amount of Euros to convert</label>
+<input type="number" name="base" step=".01" v-model.number="amountToExchange">
+<br>
 <!-- <label for="rates">Choose a Currency</label>
 <select id="rates" v-model="selectedCurrency">
   <option v-for"(value, key) in ratesData.rates" :value="value"> {{key}} </option>
 </select> -->
 
-<label for="rate_select">Select a Rate:</label>
+<label for="rate_select">Select a Foreign Currency:</label>
         <select id="rate_select" v-model="selectedCurrency">
           <option disabled value="">Select a Currency</option>
           <option v-for="(value, key) in ratesData.rates" :value="value"> {{key}} </option>
         </select>
 
 
-<p>{{selectedCurrency}}</p>
+<p>{{euroToOther}}</p>
+<br>
+<br><br><br><br>
 
-<!-- <label for="countries">Choose a Country</label>
+<h2>Convert another currency to Euros</h2>
+<label for="base">Amount of other currency to convert</label>
+<input type="number" name="base" step=".01" v-model.number="amountToExchange2">
+<br>
 
-<select id="countries" v-model="selectedCurrency">
-  <option v-for="(country, index) in countries"  v-bind:value="country" >{{country.name}}</option>
+<label for="rate_select">Select a Foreign Currency:</label>
+        <select id="rate_select" v-model="selectedCurrency2">
+          <option disabled value="">Select a Currency</option>
+          <option v-for="(value, key) in ratesData.rates" :value="value"> {{key}} </option>
+        </select>
 
-</select> -->
-
-
-
-
-
-
-
-
-
-    <!-- <select id="countries" v-model="selectedCurrency">
-      <option v-for="(country, index) in countries"  v-bind:value="country" >{{country.name}}</option>
-
-    </select> -->
-
-
+<p>€{{otherToEuro}}</p>
 
 
   </div>
